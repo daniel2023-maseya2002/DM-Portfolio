@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://danimaseya-portfolio.netlify.app/sitemap.xml
