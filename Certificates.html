@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Certificates - Dani Maseya 2025 | Software Engineer & UX/UI Designer</title>
+    <meta name="title" content="Certificates - Dani Maseya 2025 | Software Engineer & UX/UI Designer">
+    <meta name="description" content="View Dani Maseya 2025's professional certificates and credentials in software engineering, web development, and UX/UI design.">
+    <meta name="keywords" content="Dani Maseya 2025, certificates, credentials, software engineer, web development, UX/UI design, education, skills">
+    <meta name="author" content="Dani Maseya 2025">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danimaseya-portfolio.netlify.app/Certificates.html">
+    <meta property="og:title" content="Certificates - Dani Maseya 2025 | Software Engineer & UX/UI Designer">
+    <meta property="og:description" content="View Dani Maseya 2025's professional certificates and credentials in software engineering, web development, and UX/UI design.">
+    <meta property="og:image" content="https://danimaseya-portfolio.netlify.app/tete.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://danimaseya-portfolio.netlify.app/Certificates.html">
+    <meta property="twitter:title" content="Certificates - Dani Maseya 2025 | Software Engineer & UX/UI Designer">
+    <meta property="twitter:description" content="View Dani Maseya 2025's professional certificates and credentials in software engineering, web development, and UX/UI design.">
+    <meta property="twitter:image" content="https://danimaseya-portfolio.netlify.app/tete.png">
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://danimaseya-portfolio.netlify.app/Certificates.html">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #151515;
+            --accent-color: #c27b3c;
+            --accent-light: #dda775;
+            --cert-bg: #a46a31;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            padding: 20px 0;
+            background-color: var(--dark-bg);
+        }
+        
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .navbar-brand span {
+            font-size: 0.8rem;
+            display: block;
+            margin-top: -10px;
+            letter-spacing: 2px;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+        
+        .nav-link.active, .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        /* Certificates Section */
+        .certificates-section {
+            padding: 80px 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .page-title h1 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title h1:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .certificate-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .certificate-tab {
+            padding: 10px 20px;
+            margin: 0 10px 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .certificate-tab:hover {
+            background-color: #444;
+        }
+        
+        .certificate-tab.active {
+            background-color: var(--accent-color);
+        }
+        
+        .certificate-card {
+            background-color: #252525;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(194, 123, 60, 0.3);
+        }
+        
+        .certificate-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .certificate-card:hover .certificate-img {
+            opacity: 0.8;
+        }
+        
+        .certificate-body {
+            padding: 20px;
+            position: relative;
+        }
+        
+        .certificate-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--accent-light);
+        }
+        
+        .certificate-issuer {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .certificate-date {
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            opacity: 0.6;
+        }
+        
+        .certificate-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .certificate-skill {
+            background-color: #333;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+        
+        .certificate-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .btn-view, .btn-download {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-view:hover, .btn-download:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-3px);
+        }
+        
+        .certificate-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .certificate-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .certificate-overlay-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .certificate-overlay-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border: 5px solid white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .certificate-overlay-close {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background-color: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .certificate-overlay-caption {
+            text-align: center;
+            margin-top: 15px;
+            color: white;
+        }
+        
+        /* Animation classes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s forwards;
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.1s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.2s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.3s;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 50px;
+            opacity: 0.7;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-light);
+        }
+        
+        .empty-state p {
+            font-size: 1.2rem;
+        }
+        
+        /* Coming Soon Section */
+        .coming-soon {
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+        
+        .coming-soon h3 {
+            color: var(--accent-light);
+            margin-bottom: 20px;
+        }
+        
+        .coming-soon p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+        
+        .coming-soon i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-light);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .certificate-tabs {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .certificate-tab {
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="Home.html">DM<sup>®</sup> <span>PORTFOLIO</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Projects.html">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Certificates.html">Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Certificates Section -->
+    <section class="certificates-section">
+        <div class="container">
+            <div class="page-title">
+                <h1>My Certificates & Credentials</h1>
+            </div>
+            
+            <!-- Certificate Filtering Tabs -->
+            <div class="certificate-tabs">
+                <button class="certificate-tab active" data-filter="all">All Certificates</button>
+                <button class="certificate-tab" data-filter="web-development">Web Development</button>
+                <button class="certificate-tab" data-filter="programming">Programming</button>
+                <button class="certificate-tab" data-filter="networking">Networking</button>
+            </div>
+            
+            <!-- Certificates Grid -->
+            <div class="row" id="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="col-md-6 col-lg-4 certificate-item fade-in fade-in-delay-1" data-category="web-development">
+                    <div class="certificate-card">
+                        <img src="www.freecodecamp.org_certification_Daniel-Maseya_responsive-web-design(iPad Pro) (1).png" alt="Responsive Web Design Certificate" class="certificate-img">
+                        <div class="certificate-body">
+                            <h3 class="certificate-title">Responsive Web Design</h3>
+                            <div class="certificate-issuer">freeCodeCamp</div>
+                            <div class="certificate-date">Issued: 2023</div>
+                            <div class="certificate-skills">
+                                <span class="certificate-skill">HTML5</span>
+                                <span class="certificate-skill">CSS3</span>
+                                <span class="certificate-skill">Responsive Design</span>
+                            </div>
+                            <div class="certificate-actions">
+                                <button class="btn-view" data-img="www.freecodecamp.org_certification_Daniel-Maseya_responsive-web-design(iPad Pro) (1).png" data-title="Responsive Web Design Certificate">View</button>
+                                <a href="www.freecodecamp.org_certification_Daniel-Maseya_responsive-web-design(iPad Pro) (1).png" class="btn-download" download>Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 2 -->
+                <div class="col-md-6 col-lg-4 certificate-item fade-in fade-in-delay-2" data-category="networking">
+                    <div class="certificate-card">
+                        <img src="SocietyInternet.jpeg" alt="Internet Society Certificate" class="certificate-img">
+                        <div class="certificate-body">
+                            <h3 class="certificate-title">Internet Society Certificate</h3>
+                            <div class="certificate-issuer">Internet Society</div>
+                            <div class="certificate-date">Issued: 2023</div>
+                            <div class="certificate-skills">
+                                <span class="certificate-skill">Internet</span>
+                                <span class="certificate-skill">Networking</span>
+                                <span class="certificate-skill">Security</span>
+                            </div>
+                            <div class="certificate-actions">
+                                <button class="btn-view" data-img="Internet society certificate.pdf" data-title="Internet Society Certificate">View</button>
+                                <a href="Internet society certificate.pdf" class="btn-download" download>Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 3 -->
+                <div class="col-md-6 col-lg-4 certificate-item fade-in fade-in-delay-3" data-category="programming">
+                    <div class="certificate-card">
+                        <img src="VA alx.jpg" alt="ALX Certificate" class="certificate-img">
+                        <div class="certificate-body">
+                            <h3 class="certificate-title">ALX Programming</h3>
+                            <div class="certificate-issuer">ALX</div>
+                            <div class="certificate-date">Issued: 2023</div>
+                            <div class="certificate-skills">
+                                <span class="certificate-skill">Programming</span>
+                                <span class="certificate-skill">Software Development</span>
+                                <span class="certificate-skill">Problem Solving</span>
+                            </div>
+                            <div class="certificate-actions">
+                                <button class="btn-view" data-img="VA alx.jpg" data-title="ALX Programming Certificate">View</button>
+                                <a href="VA alx.jpg" class="btn-download" download>Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Empty State (Hidden by default) -->
+            <div class="empty-state" style="display: none;">
+                <i class="fas fa-certificate"></i>
+                <p>No certificates found in this category.</p>
+            </div>
+            
+            <!-- Coming Soon Section -->
+            <div class="coming-soon fade-in">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>More Certifications Coming Soon</h3>
+                <p>I'm continuously learning and improving my skills. Watch this space for additional certifications in web development, UI/UX design, advanced programming languages, and database management that I'll be pursuing in the near future.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certificate Viewer Overlay -->
+    <div class="certificate-overlay">
+        <div class="certificate-overlay-content">
+            <button class="certificate-overlay-close">&times;</button>
+            <img src="" alt="Certificate" class="certificate-overlay-img">
+            <div class="certificate-overlay-caption"></div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Certificate filtering
+            const filterButtons = document.querySelectorAll('.certificate-tab');
+            const certificateItems = document.querySelectorAll('.certificate-item');
+            const emptyState = document.querySelector('.empty-state');
+            
+            // Initial animation for certificate items
+            setTimeout(() => {
+                certificateItems.forEach(item => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                });
+                
+                document.querySelector('.coming-soon').style.opacity = '1';
+                document.querySelector('.coming-soon').style.transform = 'translateY(0)';
+            }, 100);
+            
+            // Filter certificates by category
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Active button state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    let hasVisibleItems = false;
+                    
+                    // Filter items
+                    certificateItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || filterValue === itemCategory) {
+                            item.style.display = 'block';
+                            hasVisibleItems = true;
+                            
+                            // Re-trigger animation
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show/hide empty state
+                    if (hasVisibleItems) {
+                        emptyState.style.display = 'none';
+                    } else {
+                        emptyState.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Certificate viewer
+            const viewButtons = document.querySelectorAll('.btn-view');
+            const overlay = document.querySelector('.certificate-overlay');
+            const overlayImg = document.querySelector('.certificate-overlay-img');
+            const overlayCaption = document.querySelector('.certificate-overlay-caption');
+            const closeBtn = document.querySelector('.certificate-overlay-close');
+            
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const imgSrc = this.getAttribute('data-img');
+                    const imgTitle = this.getAttribute('data-title');
+                    
+                    overlayImg.src = imgSrc;
+                    overlayCaption.textContent = imgTitle;
+                    overlay.classList.add('active');
+                    
+                    // Prevent body scrolling when overlay is active
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeBtn.addEventListener('click', function() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close overlay when clicking outside of the image
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Close overlay with escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+    
+    <!-- Schema.org structured data for certificates page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "headline": "Certificates and Credentials of Dani Maseya 2025",
+      "author": {
+        "@type": "Person",
+        "name": "Dani Maseya 2025",
+        "url": "https://danimaseya-portfolio.netlify.app/"
+      },
+      "specialty": "Software Engineering",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Responsive Web Design",
+            "description": "freeCodeCamp certification in HTML5, CSS3, and responsive web design techniques"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Internet Society Certificate",
+            "description": "Internet Society certification in internet technologies and networking concepts"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "ALX Programming",
+            "description": "ALX certification in programming fundamentals and software development"
+          }
+        ]
+      }
+    }
+    </script>
+</body>
+</html>

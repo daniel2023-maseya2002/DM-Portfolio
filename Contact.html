@@ -111,18 +111,26 @@
             background-color: #252525;
             border: 1px solid var(--accent-color);
             border-radius: 30px;
-            color: white;
+            color: white !important;
             transition: all 0.3s ease;
+            font-weight: medium;
         }
         
         .form-control:focus {
             box-shadow: 0 0 15px rgba(194, 123, 60, 0.4);
             background-color: #2a2a2a;
             border-color: var(--accent-light);
+            color: white !important;
         }
         
         .form-control::placeholder {
             color: #aaa;
+            opacity: 0.7;
+        }
+        
+        .form-control:not(:placeholder-shown) {
+            color: white !important;
+            font-weight: normal;
         }
         
         textarea.form-control {
@@ -392,14 +400,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">DM<sup>®</sup> <span>PORTFOLIO</span></a>
+            <a class="navbar-brand" href="Home.html">DM<sup>®</sup> <span>PORTFOLIO</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="Home.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Me</a>
@@ -409,6 +417,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Certificates.html">Certificates</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="Contact.html">Contact</a>
