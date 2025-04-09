@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DM Portfolio - Daniel Maseya</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #151515;
+            --accent-color: #c27b3c;
+            --btn-color: #a46a31;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            padding: 20px 0;
+            background-color: var(--dark-bg);
+        }
+        
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .navbar-brand span {
+            font-size: 0.8rem;
+            display: block;
+            margin-top: -10px;
+            letter-spacing: 2px;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+        
+        .nav-link.active, .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: absolute;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero-img-container {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-img {
+            height: auto;
+            max-height: 80vh;
+            width: auto;
+            object-fit: contain;
+            clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, 
+                rgba(26,26,26,0.5) 0%, 
+                rgba(26,26,26,0.7) 40%, 
+                rgba(26,26,26,0.9) 70%, 
+                rgba(26,26,26,1) 100%);
+            z-index: 5;
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            font-weight: bold;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+        }
+        
+        .subheading {
+            font-size: 2.5rem;
+            margin-top: 20px;
+            font-weight: normal;
+        }
+        
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            .subheading {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .hero-img {
+                max-width: 80%;
+                max-height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">DM<sup>®</sup> <span>PORTFOLIO</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Projects.html">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hello, I'm <span class="highlight">Daniel Maseya</span>.</h1>
+            <p class="subheading">I'm a software engineer.</p>
+        </div>
+        <div class="hero-img-container">
+            <img src="tete.png" alt="Daniel Maseya" class="hero-img">
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Bootstrap & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

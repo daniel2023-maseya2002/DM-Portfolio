@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Daniel Maseya</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #151515;
+            --accent-color: #c27b3c;
+            --accent-light: #dda775;
+            --skills-bg: #a46a31;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            padding: 20px 0;
+            background-color: var(--dark-bg);
+        }
+        
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .navbar-brand span {
+            font-size: 0.8rem;
+            display: block;
+            margin-top: -10px;
+            letter-spacing: 2px;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+        
+        .nav-link.active, .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            padding: 80px 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .skills-container {
+            background-color: var(--skills-bg);
+            border-radius: 30px;
+            padding: 50px;
+            margin-top: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skills-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, var(--accent-color), var(--skills-bg));
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.7;
+        }
+        
+        .skills-category {
+            margin-bottom: 40px;
+        }
+        
+        .skills-category h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skills-category h3 i {
+            margin-right: 10px;
+        }
+        
+        .skills-list {
+            list-style-type: none;
+            padding-left: 25px;
+        }
+        
+        .skills-list li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        .skills-list li::before {
+            content: '•';
+            position: absolute;
+            left: -20px;
+            color: white;
+        }
+        
+        /* Skill bars styling */
+        .skill-chart-container {
+            margin-top: 50px;
+            padding: 20px;
+        }
+        
+        .skill-bar {
+            margin-bottom: 25px;
+        }
+        
+        .skill-name {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .skill-percentage {
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .skill-bar-outer {
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-bar-inner {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-light), var(--accent-color));
+            width: 0;
+            border-radius: 5px;
+            position: relative;
+            transition: width 1.5s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+        }
+        
+        .skill-bar-inner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 2s infinite linear;
+            transform: translateX(-100%);
+        }
+        
+        @keyframes shine {
+            to {
+                transform: translateX(100%);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .skills-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container {
+                padding: 25px;
+            }
+            
+            .skills-category h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="Home.html">DM<sup>®</sup> <span>PORTFOLIO</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="skills-container">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <!-- Left Column - Text-based skills -->
+                                <div class="skills-category">
+                                    <h3><i class="fas fa-laptop-code"></i> Programming & Development</h3>
+                                    <ul class="skills-list">
+                                        <li>C# – Strong experience in Windows Forms (WinForms) and ASP.NET Web Forms</li>
+                                        <li>Java – Object-oriented programming, basic console and GUI apps</li>
+                                        <li>.NET Framework – Building robust desktop and web applications</li>
+                                        <li>SQL – Writing queries, stored procedures, and managing relational databases</li>
+                                        <li>Data Structures & Algorithms – Understanding of core data concepts for efficient logic building</li>
+                                        <li>CRUD Operations – Full Create, Read, Update, Delete functionality across multiple systems</li>
+                                        <li>PDF Export – Implementing PDF printing/export for reports and forms</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3><i class="fas fa-globe"></i> Web Technologies</h3>
+                                    <ul class="skills-list">
+                                        <li>ASP.NET Web Forms – Role-based web application development</li>
+                                        <li>Bootstrap – Enhancing UI for responsive and clean interfaces</li>
+                                        <li>HTML & CSS – Styling and structuring front-end pages</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3><i class="fas fa-paint-brush"></i> UX/UI Design</h3>
+                                    <ul class="skills-list">
+                                        <li>Figma – Creating user interfaces, wireframes, and interactive prototypes</li>
+                                        <li>Understanding user flow and usability best practices</li>
+                                        <li>Learning constraints and responsive design features</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3><i class="fas fa-sitemap"></i> System Design & Architecture</h3>
+                                    <ul class="skills-list">
+                                        <li>Role-Based Access Control (RBAC) – Implementing user authentication and redirection logic (Student, Teacher, Admin)</li>
+                                        <li>Modular System Design – Organizing features around semester-based academic structures</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3><i class="fas fa-database"></i> Database Management</h3>
+                                    <ul class="skills-list">
+                                        <li>Microsoft SQL Server – Using stored procedures, managing tables, and linking systems to databases</li>
+                                        <li>Data Binding – Connecting UI elements to live data in both WinForms and Web Forms</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="skills-category">
+                                    <h3><i class="fas fa-heart"></i> Soft Skills & Personal Strengths</h3>
+                                    <ul class="skills-list">
+                                        <li>Problem-solving through hands-on development</li>
+                                        <li>Learning by building real-world projects</li>
+                                        <li>Highly consistent and goal-driven</li>
+                                        <li>Strong communication and teamwork mindset</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-5">
+                                <!-- Right Column - Skill bar charts -->
+                                <div class="skill-chart-container">
+                                    <h3 class="mb-4">Technical Proficiency</h3>
+                                    
+                                    <div class="skill-bar">
+                                        <div class="skill-name">
+                                            <span>HTML</span>
+                                            <span class="skill-percentage">80%</span>
+                                        </div>
+                                        <div class="skill-bar-outer">
+                                            <div class="skill-bar-inner" data-percentage="80"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-bar">
+                                        <div class="skill-name">
+                                            <span>CSS</span>
+                                            <span class="skill-percentage">60%</span>
+                                        </div>
+                                        <div class="skill-bar-outer">
+                                            <div class="skill-bar-inner" data-percentage="60"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-bar">
+                                        <div class="skill-name">
+                                            <span>JavaScript</span>
+                                            <span class="skill-percentage">30%</span>
+                                        </div>
+                                        <div class="skill-bar-outer">
+                                            <div class="skill-bar-inner" data-percentage="30"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-bar">
+                                        <div class="skill-name">
+                                            <span>Java</span>
+                                            <span class="skill-percentage">60%</span>
+                                        </div>
+                                        <div class="skill-bar-outer">
+                                            <div class="skill-bar-inner" data-percentage="60"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-bar">
+                                        <div class="skill-name">
+                                            <span>C#</span>
+                                            <span class="skill-percentage">65%</span>
+                                        </div>
+                                        <div class="skill-bar-outer">
+                                            <div class="skill-bar-inner" data-percentage="65"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-bar">
+                                        <div class="skill-name">
+                                            <span>UI/UX Design</span>
+                                            <span class="skill-percentage">80%</span>
+                                        </div>
+                                        <div class="skill-bar-outer">
+                                            <div class="skill-bar-inner" data-percentage="80"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bootstrap & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill bars when scrolled into view
+            const skillBars = document.querySelectorAll('.skill-bar-inner');
+            const skillPercentages = document.querySelectorAll('.skill-percentage');
+            
+            // Function to check if element is in viewport
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            
+            // Function to animate skill bars
+            function animateSkillBars() {
+                skillBars.forEach((bar, index) => {
+                    if (isElementInViewport(bar)) {
+                        const percentage = bar.getAttribute('data-percentage');
+                        bar.style.width = percentage + '%';
+                        skillPercentages[index].style.opacity = '1';
+                    }
+                });
+            }
+            
+            // Initial check
+            animateSkillBars();
+            
+            // Check on scroll
+            window.addEventListener('scroll', animateSkillBars);
+            
+            // Add a nice entrance animation to the skills container
+            const skillsContainer = document.querySelector('.skills-container');
+            skillsContainer.style.opacity = '0';
+            skillsContainer.style.transform = 'translateY(20px)';
+            skillsContainer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                skillsContainer.style.opacity = '1';
+                skillsContainer.style.transform = 'translateY(0)';
+            }, 300);
+            
+            // Add hover effects to skill categories
+            const skillCategories = document.querySelectorAll('.skills-category');
+            skillCategories.forEach(category => {
+                category.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                category.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

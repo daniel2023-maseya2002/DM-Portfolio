@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Daniel Maseya</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #151515;
+            --accent-color: #c27b3c;
+            --accent-light: #dda775;
+            --footer-bg: #a46a31;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .navbar {
+            padding: 20px 0;
+            background-color: var(--dark-bg);
+        }
+        
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .navbar-brand span {
+            font-size: 0.8rem;
+            display: block;
+            margin-top: -10px;
+            letter-spacing: 2px;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+        
+        .nav-link.active, .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            flex: 1;
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            background-color: #252525;
+            border: 1px solid var(--accent-color);
+            border-radius: 30px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            box-shadow: 0 0 15px rgba(194, 123, 60, 0.4);
+            background-color: #2a2a2a;
+            border-color: var(--accent-light);
+        }
+        
+        .form-control::placeholder {
+            color: #aaa;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+            border-radius: 20px;
+        }
+        
+        .send-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .send-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.4s ease;
+        }
+        
+        .send-btn:hover:before {
+            left: 100%;
+        }
+        
+        .send-btn:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .send-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--footer-bg);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            z-index: 0;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%);
+            animation: rotate 30s infinite linear;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            animation: pulse-icon 2s infinite alternate;
+        }
+        
+        @keyframes pulse-icon {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link:hover {
+            background-color: white;
+            color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .social-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .social-link:hover:before {
+            opacity: 1;
+        }
+        
+        .success-message, .error-message {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .success-message {
+            background-color: rgba(76, 175, 80, 0.2);
+            border: 1px solid #4CAF50;
+        }
+        
+        .error-message {
+            background-color: rgba(244, 67, 54, 0.2);
+            border: 1px solid #F44336;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .bounce {
+            animation: bounce 1s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Form animations */
+        .form-control {
+            animation: pulse 2s infinite alternate;
+            animation-play-state: paused;
+        }
+        
+        .form-control:focus {
+            animation-play-state: running;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 5px rgba(194, 123, 60, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(194, 123, 60, 0.6);
+            }
+        }
+        
+        .send-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Special hashtag animation */
+        .hashtag-text {
+            display: inline-block;
+            position: relative;
+        }
+
+        .text-transform {
+            animation: transformText 0.5s;
+        }
+
+        @keyframes transformText {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .social-links {
+                justify-content: center;
+                margin-top: 30px;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="Home.html">DM<sup>®</sup> <span>PORTFOLIO</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form-container fade-in">
+                        <div class="success-message">
+                            Your message has been sent successfully. I'll get back to you soon!
+                        </div>
+                        <div class="error-message">
+                            There was an error sending your message. Please try again later.
+                        </div>
+                        
+                        <form class="contact-form" action="https://formspree.io/f/mblgqrpz" method="POST" id="contact-form">
+                            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            <textarea name="message" class="form-control" placeholder="Note" required></textarea>
+                            <button type="submit" class="send-btn">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-info slide-in-left">
+                        <i class="fas fa-envelope"></i>
+                        <span>maseyadaniel@gmail.com</span>
+                    </div>
+                    <div class="contact-info slide-in-left" style="transition-delay: 0.1s;">
+                        <i class="fas fa-phone"></i>
+                        <span>+250791434027</span>
+                    </div>
+                    <div class="contact-info slide-in-left" style="transition-delay: 0.2s;">
+                        <i class="fas fa-user"></i>
+                        <span id="username" class="hashtag-text">Dani Maseya 2025</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-links slide-in-right">
+                        <a href="https://www.linkedin.com/in/danimaseya" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://x.com/daniel_maseya" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/dani_maseya_22/" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/daniel2023-maseya2002" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on page load
+            setTimeout(function() {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                });
+                
+                document.querySelectorAll('.slide-in-left').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateX(0)';
+                });
+                
+                document.querySelectorAll('.slide-in-right').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateX(0)';
+                });
+            }, 300);
+            
+            // Add bounce effect to social icons on hover
+            document.querySelectorAll('.social-link').forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.querySelector('i').classList.add('bounce');
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.querySelector('i').classList.remove('bounce');
+                });
+            });
+            
+            // Form submission handling
+            const contactForm = document.getElementById('contact-form');
+            const successMessage = document.querySelector('.success-message');
+            const errorMessage = document.querySelector('.error-message');
+            
+            contactForm.addEventListener('submit', function(e) {
+                // Add particle effects on form submission
+                createParticles();
+                
+                // The form will be handled by Formspree
+                // This is just for visual feedback
+                
+                // We'll add a small delay to simulate processing
+                setTimeout(function() {
+                    // Formspree will handle the actual form submission
+                    // Here we just show a visual success state
+                    successMessage.style.display = 'block';
+                    contactForm.reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(function() {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                }, 1000);
+            });
+            
+            // Animate form controls on focus
+            const formControls = document.querySelectorAll('.form-control');
+            formControls.forEach(control => {
+                control.addEventListener('focus', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 0 15px rgba(194, 123, 60, 0.6)';
+                });
+                
+                control.addEventListener('blur', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '';
+                });
+            });
+
+            // Special animation for username to change to hashtag
+            const usernameElement = document.getElementById('username');
+            let isHashtag = false;
+            
+            // Start the alternating animation
+            function startAlternatingText() {
+                setInterval(() => {
+                    // Toggle between regular and hashtag version
+                    isHashtag = !isHashtag;
+                    
+                    // Add transform animation class
+                    usernameElement.classList.add('text-transform');
+                    
+                    // After animation completes, change the text
+                    setTimeout(() => {
+                        if (isHashtag) {
+                            usernameElement.textContent = '#DaniMaseya2025';
+                        } else {
+                            usernameElement.textContent = 'Dani Maseya 2025';
+                        }
+                        
+                        // Remove the animation class to prepare for next change
+                        setTimeout(() => {
+                            usernameElement.classList.remove('text-transform');
+                        }, 500);
+                    }, 250);  // This is half of the transformText animation duration
+                }, 1000);  // Change every second
+            }
+            
+            // Start the alternating animation after 1 second
+            setTimeout(startAlternatingText, 1000);
+            
+            // Function to create particles effect
+            function createParticles() {
+                const container = document.querySelector('.contact-section');
+                
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'absolute';
+                    particle.style.width = Math.random() * 10 + 5 + 'px';
+                    particle.style.height = particle.style.width;
+                    particle.style.background = `rgba(194, 123, 60, ${Math.random() * 0.5 + 0.5})`;
+                    particle.style.borderRadius = '50%';
+                    
+                    const startLeft = 50; // Starting position X
+                    const startTop = 50;  // Starting position Y
+                    
+                    particle.style.left = startLeft + '%';
+                    particle.style.top = startTop + '%';
+                    
+                    // Random directions and speed
+                    const angle = Math.random() * Math.PI * 2;
+                    const speed = Math.random() * 100 + 50;
+                    const xSpeed = Math.cos(angle) * speed;
+                    const ySpeed = Math.sin(angle) * speed;
+                    
+                    // Set transition for smooth movement
+                    particle.style.transition = `all ${Math.random() * 1 + 1}s ease-out`;
+                    
+                    container.appendChild(particle);
+                    
+                    // Animate particles outward
+                    setTimeout(() => {
+                        particle.style.left = (startLeft + xSpeed) + '%';
+                        particle.style.top = (startTop + ySpeed) + '%';
+                        particle.style.opacity = '0';
+                        
+                        // Remove particles after animation
+                        setTimeout(() => {
+                            container.removeChild(particle);
+                        }, 2000);
+                    }, 10);
+                }
+            }
+            
+            // Add wave animation to the footer
+            const footer = document.querySelector('.footer');
+            
+            // Create animated wave effect in footer
+            const wave = document.createElement('div');
+            wave.style.position = 'absolute';
+            wave.style.top = '0';
+            wave.style.left = '0';
+            wave.style.width = '100%';
+            wave.style.height = '10px';
+            wave.style.background = 'rgba(255, 255, 255, 0.1)';
+            wave.style.zIndex = '0';
+            
+            footer.appendChild(wave);
+            
+            animateWave(wave);
+            
+            // Function to animate the wave
+            function animateWave(element) {
+                let position = 0;
+                
+                setInterval(() => {
+                    position -= 1;
+                    element.style.transform = `translateX(${position}px)`;
+                    
+                    if (position <= -window.innerWidth) {
+                        position = 0;
+                    }
+                }, 50);
+            }
+        });
+    </script>
+</body>
+</html>
